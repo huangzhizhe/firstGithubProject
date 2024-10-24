@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 25px;
+            background-color: #f5f5f5;
+            text-align: center;
+            cursor: default;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .box span {
+            transition: color 0.3s;
+        }
+
+        .box:hover span {
+            color: #3399cc;
+        }
+
+        .box:hover {
+            cursor: pointer;
+        }
+
+        .before {
+            width: 5px;
+            height: 25px;
+            background-color: #cccccc;
+
+        }
+
+        .pre {
+            float: left;
+        }
+    </style>
+
+</head>
+<body>
+<div class="pre">
+    <div class="before" style="background-color: #3399cc"></div>
+    <div class="before"></div>
+    <div class="before"></div>
+    <div class="before"></div>
+    <div class="before"></div>
+    <div class="before"></div>
+</div>
+<div class="content">
+    <div class="box" style="background-color: #3399cc">
+        <span>学校动态</span>
+    </div>
+    <div class="box">
+        <span>学校新闻</span>
+    </div>
+    <div class="box">
+        <span>研究成果</span>
+    </div>
+    <div class="box">
+        <span>学校公告</span>
+    </div>
+    <div class="box">
+        <span>工作简报</span>
+    </div>
+    <div class="box">
+        <span>学校介绍</span>
+    </div>
+</div>
+<script type="text/javascript">
+    var boxes = document.querySelectorAll('.box');
+    pres = document.querySelectorAll('.before')
+    for (let i = 1; i < 6; i++) {
+        boxes.item(i).onmouseover = function () {
+            pres.item(i).style.backgroundColor = '#3399cc'
+        }
+        boxes.item(i).onmouseout = function () {
+            pres.item(i).style.backgroundColor = '#cccccc'
+        }
+    }
+</script>
+</body>
+</html>
